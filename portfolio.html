@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Add Google Fonts for more appealing typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* CSS styles */
+        body, h1, h2, h3, p, input, button {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Add background gradient for header */
+        header {
+            background: linear-gradient(90deg, #333, #444);
+            color: #fff;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 22px;
+            margin-bottom: 40px;
+        }
+
+        section {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin: 40px auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .about img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 6px solid #fff; /* Add border around profile picture */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project img {
+            max-width: 100%;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .project img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: linear-gradient(90deg, #444, #333);
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #fff;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Edwin Kijana Aloo</h1>
+        <p>Welcome to my Portfolio</p>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Me</h2>
+        <img src="profile.jpg" alt="Profile Image">
+        <p>I am a passionate web developer with expertise in HTML, CSS, JavaScript, React, and Python. I love creating beautiful and functional websites and applications.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Python</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project Title</h3>
+            <p>Description of project</p>
+            <img src="project/images/project1.jpg" alt="Project Image">
+        </div>
+        <!-- Add more projects -->
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume">
+        <h2>Resume</h2>
+        <a href="resume.pdf" download>Download Resume</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: alooedwin94@gmail.com</p>
+        <p>Phone: 0111770495</p>
+        <form id="contact-form">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4"></textarea><br>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Aloo Edwin. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/alooedwin/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/alooedwin" target="_blank"><i class="fab fa-github"></i></a>
+            <!-- Add more social media icons as needed -->
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript code for dynamic functionality and animations
+
+        // Add hover effect to project images
+        const projectImages = document.querySelectorAll('.project img');
+        projectImages.forEach(image => {
+            image.addEventListener('mouseenter', () => {
+                image.style.transform = 'scale(1.1)';
+            });
+            image.addEventListener('mouseleave', () => {
+                image.style.transform = 'scale(1)';
+            });
+        });
+
+        // Smooth scroll to sections
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission handling
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(contactForm);
+            // Send form data to server using fetch or XMLHttpRequest
+            // Example: fetch('submit-form.php', { method: 'POST', body: formData })
+            // .then(response => response.json())
+            // .then(data => console.log(data))
+            // .catch(error => console.error('Error:', error));
+            alert('Form submitted successfully!');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
