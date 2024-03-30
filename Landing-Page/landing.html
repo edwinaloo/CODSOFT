@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>Edwin Aloo - Software Engineer</title>
     <style>
         /* Resetting default styles */
-        body, h1, h2, p, ul, li, form, button {
+        body, h1, h2, h3, p, ul, li, form, button {
             margin: 0;
             padding: 0;
         }
@@ -15,15 +15,21 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f4f4f4;
             color: #333;
+            margin: 0;
+            padding: 0;
+            background-image: url('pictures/your-background-image.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
         }
 
         header {
-            background-color: #007bff;
+            background-color: black;
             color: #fff;
             padding: 20px;
             text-align: center;
+            position: relative; /* Add position relative */
+            z-index: 1; /* Ensure header stays on top of background */
         }
 
         nav ul {
@@ -43,7 +49,7 @@
         section {
             padding: 20px;
             margin-bottom: 30px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); /* Add opacity to sections */
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
@@ -54,42 +60,87 @@
             text-align: center;
             padding: 20px;
         }
+
+        /* Custom styles */
+        .resume {
+            margin-top: 20px;
+        }
+
+        .resume a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .resume a:hover {
+            text-decoration: underline;
+        }
+
+        /* Form styles */
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Our Landing Page</h1>
+        <img src="pictures/DSC_0077.jpg" alt="Edwin Aloo" style="width: 100px; border-radius: 50%;">
+        <h1>Edwin Aloo - Software Engineer</h1>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
+                <li><a href="#features">Skills & Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <section id="about">
-        <h2>About Us</h2>
-        <p>At just 18 years old, Edwin is a promising software engineer known for his exceptional skills and innovative mindset. With a passion for technology, he demonstrates talent and a drive for excellence.</p>
+        <h2>About Me</h2>
+        <p>As a passionate software engineer with expertise in JavaScript, React, Python, and Django, I bring creativity and innovation to every project. Let's build something amazing together!</p>
     </section>
-    
+
     <section id="features">
-        <h2>Features</h2>
+        <h2>Skills & Projects</h2>
         <ul>
-            <li>Feature 1: Am experienced in languages like Javascript React Python and a litle bit of pythons framework django</li>
-            <li>Feature 2: I have studied at Moringa schools where i have gained skills and earned my certificate of a fullstack Software Enginner.</li>
-            <li>Feature 3: i have worked on some outstanding projects which can be seen in my portfolio below</li>
-            <section class="resume">
-                <h2>Resume</h2>
-                <a href="picture/Edwin Aloo Resume .pdf" download>Download Resume</a>
-            </section>
-            
+            <li><strong>Technical Skills:</strong> Proficient in JavaScript, React, Python, and Django.</li>
+            <li><strong>Education:</strong> Graduated from Moringa School with a certificate in Full Stack Software Engineering.</li>
+            <li><strong>Projects:</strong> Developed numerous projects showcasing expertise in web development and software engineering. Check out my <a href="picture/Edwin Aloo Resume .pdf" download>resume</a> for details.</li>
         </ul>
     </section>
-    
+
     <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Have a question or want to learn more? Contact us using the form below.</p>
+        <h2>Contact Me</h2>
+        <p>Have a question or want to collaborate? Reach out to me using the form below.</p>
         <form>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -100,9 +151,9 @@
             <button type="submit">Send</button>
         </form>
     </section>
-    
+
     <footer>
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>&copy; 2024 Edwin Aloo - Software Engineer. All rights reserved.</p>
     </footer>
 
     <script>
@@ -110,21 +161,21 @@
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href').substring(1);
                 const target = document.getElementById(targetId);
-                
+
                 window.scrollTo({
                     top: target.offsetTop,
                     behavior: 'smooth'
                 });
             });
         });
-        
+
         // Form submission handling
         document.querySelector('form').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Simulate form submission (replace with actual submission logic)
             alert('Form submitted!');
             // Reset form fields
